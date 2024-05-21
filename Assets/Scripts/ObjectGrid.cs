@@ -2,8 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Grid: MonoBehaviour
+public class ObjectGrid : MonoBehaviour
 {
+    [SerializeField]
+    private float TwoRowRatio = 0.20f;
+    [SerializeField]
+    private float ThreeRowRation = .12f;
+    [SerializeField]
+    private float FourRowRatio = 0.08f;
+    [SerializeField]
+    private float CubeRatio = 0.02f;
+    private List<float> RowsRatio;
+
     [SerializeField]
     private int width;
 
@@ -15,11 +25,10 @@ public class Grid: MonoBehaviour
 
     private int[,] GridArray;
 
-    [SerializeField]
     public List<List<GameObject>> ObjectsList = new List<List<GameObject>>();
 
     [SerializeField]
-    GameObject Object;
+    GameObject ObjectToSpawn;
     void Start()
     {
         GridArray = new int[width, height];
@@ -29,7 +38,7 @@ public class Grid: MonoBehaviour
             List<GameObject> object_line_list = new List<GameObject>();
             for ( int y = 0; y < GridArray.GetLength(1); y++)
             {
-                GameObject Spawned_Obj = Instantiate(Object, new Vector3(gameObject.transform.position.x + x, gameObject.transform.position.y + y, 0) * grid_cells_distance, Quaternion.identity);
+                GameObject Spawned_Obj = Instantiate(ObjectToSpawn, new Vector3(gameObject.transform.position.x + x, gameObject.transform.position.y + y, 0) * grid_cells_distance, Quaternion.identity);
                 object_line_list.Add(Spawned_Obj);
                 Spawned_Obj.transform.SetParent(gameObject.transform);
                 Spawned_Obj.name = $"Circle {x} {y}";
@@ -37,5 +46,13 @@ public class Grid: MonoBehaviour
             ObjectsList.Add(object_line_list);
         }
         gameObject.transform.position = new Vector3((transform.position.x - (width - 1) * grid_cells_distance) / 2, (transform.position.y - (height - 1) * grid_cells_distance) / 2, 0);
+    }
+    private void Awake()
+    {
+        RowsRatio = new List<float>() {TwoRowRatio, ThreeRowRation, FourRowRatio, CubeRatio};
+    }
+    private void Generate()
+    {
+
     }
 }
