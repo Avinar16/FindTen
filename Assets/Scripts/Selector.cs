@@ -28,7 +28,6 @@ public class Selector : MonoBehaviour
             {
                 case TouchPhase.Began:
                     Start_position = ScreenToWorldCoordinates(touch.position);
-                    Debug.Log(Start_position);
                     break;
 
                 case TouchPhase.Moved:
@@ -52,7 +51,7 @@ public class Selector : MonoBehaviour
     private void CalculateArea(Vector3 Start, Vector3 End)
     {
         Collider2D[] found_objects = Physics2D.OverlapAreaAll(Start, End);
-        List<Point> found_points = new List<Point>();
+        Debug.Log(found_objects.Length);
         int sum = 0;
         for(int i = 0; i < found_objects.Length; i++)
         {
@@ -61,10 +60,10 @@ public class Selector : MonoBehaviour
         }
         if(sum == 10)
         {
-            for(int i =0; i < found_objects.Length; i++)
+            GameManager.gameManager.score_counter.AddScore(found_objects.Length);
+            for (int i =0; i < found_objects.Length; i++)
             {
-                Destroy(found_objects[i].gameObject);
-                //add score;
+                Destroy(found_objects[i].gameObject); 
             }
         }
     }

@@ -1,18 +1,43 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private float timer;
+    [SerializeField]
+    private float StartTime;
+    [SerializeField]
+    private TextMeshProUGUI text;
 
-    // Update is called once per frame
-    void Update()
+    private bool isActive;
+    private void Update()
     {
-        
+        TimerTick();
+    }
+    void OnTimer()
+    {
+        isActive = false;
+        GameManager.gameManager.EndGame();
+    }
+    public void StartTimer()
+    {
+        timer = StartTime;
+        isActive = true;
+    }
+    void TimerTick()
+    {
+        if (isActive)
+        {
+            timer -= Time.deltaTime;
+            text.SetText(Math.Round(timer).ToString());
+        }
+        if (timer <= 0)
+        {
+            OnTimer();
+        }
     }
 }
