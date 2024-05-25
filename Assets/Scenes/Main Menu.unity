@@ -1167,6 +1167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 292ca9d7b0f586144973d8c3dcbb79a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 654537325}
 --- !u!1 &863309522
 GameObject:
   m_ObjectHideFlags: 0
