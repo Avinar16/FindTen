@@ -45,9 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TwoRowRatio: 0.2
-  ThreeRowRation: 0.12
-  FourRowRatio: 0.08
-  CubeRatio: 0.02
+  ThreeRowRation: 0.1
+  FourRowRatio: 0.1
+  CubeRatio: 0.05
   width: 10
   height: 17
   grid_cells_distance: 0.85
