@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 39223121}
   - component: {fileID: 39223120}
   - component: {fileID: 39223119}
-  - component: {fileID: 39223122}
   m_Layer: 5
   m_Name: SettingsButton
   m_TagString: Untagged
@@ -208,14 +207,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 39223122}
-        m_TargetAssemblyTypeName: ToRules, Assembly-CSharp
-        m_MethodName: Change_Scene
-        m_Mode: 1
+      - m_Target: {fileID: 654537328}
+        m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -258,19 +257,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 39223117}
   m_CullTransparentMesh: 1
---- !u!114 &39223122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 39223117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4210d322b5ec6d4db8d539164a70b5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scene_number: 1
 --- !u!1 &61077696
 GameObject:
   m_ObjectHideFlags: 0
@@ -1037,6 +1023,7 @@ GameObject:
   - component: {fileID: 654537326}
   - component: {fileID: 654537325}
   - component: {fileID: 654537327}
+  - component: {fileID: 654537328}
   m_Layer: 0
   m_Name: Main_Menu
   m_TagString: Untagged
@@ -1167,7 +1154,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 292ca9d7b0f586144973d8c3dcbb79a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 654537325}
+  audioSource: {fileID: 0}
+--- !u!114 &654537328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654537324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 790bdb9af8aff214ea527163b61b6d7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &863309522
 GameObject:
   m_ObjectHideFlags: 0
@@ -1251,7 +1250,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 863309525}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 654537328}
+        m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &863309525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1302,7 +1313,6 @@ GameObject:
   - component: {fileID: 979543513}
   - component: {fileID: 979543512}
   - component: {fileID: 979543511}
-  - component: {fileID: 979543514}
   m_Layer: 5
   m_Name: RulesButton
   m_TagString: Untagged
@@ -1375,14 +1385,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 979543514}
-        m_TargetAssemblyTypeName: ToRules, Assembly-CSharp
-        m_MethodName: Change_Scene
-        m_Mode: 1
+      - m_Target: {fileID: 654537328}
+        m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1425,16 +1435,3 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 979543509}
   m_CullTransparentMesh: 1
---- !u!114 &979543514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 979543509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4210d322b5ec6d4db8d539164a70b5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scene_number: 2

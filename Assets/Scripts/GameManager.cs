@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -41,5 +42,9 @@ public class GameManager : MonoBehaviour
         Destroy(Grid);
         score_counter.SetRecord();
         score_counter.ResetScore();
+    }
+    public void ChangeScene(int scene_number)
+    {
+        SceneManager.LoadScene(scene_number);
     }
 }

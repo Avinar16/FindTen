@@ -16,9 +16,9 @@ public class VolumeController : MonoBehaviour
 
     private void SetVolume(float volume)
     {
-        if (Main_Menu_Sound.instance != null && Main_Menu_Sound.instance.audioSource != null)
+        if (Main_Menu.instance != null && Main_Menu.instance.audioSource != null)
         {
-            Main_Menu_Sound.instance.audioSource.volume = volume;
+            Main_Menu.instance.audioSource.volume = volume;
         }
         PlayerPrefs.SetFloat("volume", volume); // Сохраняем значение громкости
     }
